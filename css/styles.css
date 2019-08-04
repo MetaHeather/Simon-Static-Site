@@ -1,0 +1,47 @@
+html {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#console {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5%;
+    overflow: hidden;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: darkgrey;
+    border: 35px solid darkgrey;
+}
+
+
+
+.button {
+    grid-auto-flow: row;
+}
+#yellow-button {
+    background-color: yellow;
+}
+
+#blue-button {
+    background-color: blue;
+}
+
+#red-button {
+    background-color: red;
+}
+
+#green-button {
+    background-color: green;
+}
+
+
+
