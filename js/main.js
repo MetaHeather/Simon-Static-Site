@@ -10,4 +10,5 @@ const colorButtons = {
     gButton: document.querySelector('#green-button')
   };
 /*----- event listeners -----*/
+
 /*----- functions -----*/

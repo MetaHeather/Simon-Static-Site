@@ -18,7 +18,9 @@
  
 
 ## Wireframes
-
+```html
+<img src='images/wireframe.jpg'>
+```
 
 ## User Stories
 * As a user(AAU), I would like the buttons to make sounds, to make it easier to remember the pattern
