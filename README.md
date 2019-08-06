@@ -31,8 +31,13 @@
 * Colors will display to user
 
 ## Stretch Goals
+* Optional color blind mode
 * Add levels of difficulty such as colors showing faster
 * Add sound thems the user can choose from 
 
 ## Psuedo Code
+* Class to create color objects
+* Arrays to hold user and computer color choices
+* Click event for each color button
+* RNG for computer to choose one of the four colors to display
 * 

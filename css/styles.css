@@ -1,12 +1,21 @@
 html {
     height: 100%;
 }
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
+    background: url("https://images.unsplash.com/photo-1541367909608-b297a6394100?ixlib=rb-1.2.1&auto=format&fit=crop&w=1587&q=80");  
+}
+
+h1 {
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 80px;
+    font-weight: bold;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 #console {
@@ -18,29 +27,88 @@ body {
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    background-color: darkgrey;
-    border: 35px solid darkgrey;
+    background-color: #2E3738;
+    border: 35px solid #2E3738;
 }
 
-
+.center-button {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 26%;
+    bottom: 0;;
+    margin: auto;
+    width: 255px;
+    height: 255px;
+    border-radius: 50%;
+    background-color: #2E3738;
+}
 
 .button {
     grid-auto-flow: row;
 }
+
+#green-button {
+    background-color: #4DAD4C;
+}
 #yellow-button {
-    background-color: yellow;
+    background-color: #CEC854;
 }
 
 #blue-button {
-    background-color: blue;
+    background-color: #435FAD;
 }
 
 #red-button {
-    background-color: red;
+    background-color: #BA573F;
 }
 
-#green-button {
-    background-color: green;
+
+/*
+Changes color of buttons on hover
+*/
+#green-button:hover {
+    background-color: #4DAD4C;
+}
+
+#yellow-button:hover {
+    background-color: #FFF200;
+}
+
+#blue-button:hover {
+    background-color: #005DFF;
+}
+
+#red-button:hover {
+    background-color: #FF0000;
+}
+
+#green-button:hover {
+    background-color: #06E502;
+}
+
+
+/*
+Changes color of buttons in code while gamePattern is running
+*/
+#green-button-running {
+    background-color: #4DAD4C;
+}
+
+#yellow-button-running {
+    background-color: #FFF200;
+}
+
+#blue-button-running {
+    background-color: #005DFF;
+}
+
+#red-button-running {
+    background-color: #FF0000;
+}
+
+#green-button-running {
+    background-color: #06E502;
 }
 
 
