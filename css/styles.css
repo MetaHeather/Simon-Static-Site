@@ -6,7 +6,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     height: 100%;
     background: url("https://images.unsplash.com/photo-1541367909608-b297a6394100?ixlib=rb-1.2.1&auto=format&fit=crop&w=1587&q=80");  
 }
@@ -15,38 +14,67 @@ h1 {
     font-family: 'Anonymous Pro', monospace;
     font-size: 80px;
     font-weight: bold;
+    margin: 24px;
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
+button {
+    background-color: darkgrey;
+    border-radius: 20px;
+    min-width: 10vmin;
+    min-height: 5vmin;
+    font-weight: bold;
+    font-size: 2vmin;
+}
+
 #console {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-gap: 5%;
+    flex-shrink: 0;
     overflow: hidden;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
+    width: 65vmin;
+    height: 65vmin;
+    min-width: 300px;
+    min-height: 300px;
+    border-radius: 50%; 
     background-color: #2E3738;
-    border: 35px solid #2E3738;
+    border: 20px solid #2E3738;
 }
 
 .center-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 26%;
-    bottom: 0;;
-    margin: auto;
-    width: 255px;
-    height: 255px;
+    top: calc(50% - 20vmin);
+    left: calc(50% - 20vmin);
+    width: 40vmin;
+    height: 40vmin;
+    font-family: 'Roboto Slab', serif;
+    font-size: 30px;
     border-radius: 50%;
+    color: red;
     background-color: #2E3738;
 }
 
 .button {
     grid-auto-flow: row;
 }
+
+#score {
+    font-size: 5vmin;
+    margin: 0;
+}
+
+#score-val {
+    font-size: 10vmin;
+    margin: 0;
+}
+
 
 #green-button {
     background-color: #4DAD4C;

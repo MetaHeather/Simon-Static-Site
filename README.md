@@ -40,4 +40,5 @@
 * Arrays to hold user and computer color choices
 * Click event for each color button
 * RNG for computer to choose one of the four colors to display
-* 
+* Color button click event handler will save users input and compare to computers colors
+* Computers turn will be called at the end of users turn to alternate turns. 
