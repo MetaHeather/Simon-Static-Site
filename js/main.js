@@ -16,14 +16,14 @@ const green = new Color('green', document.querySelector('#green-button'));
 //Array to hold color objects.
 const colors = [yellow, blue, red, green];
 
-
 /*----- app's state (variables) -----*/
 /*-----------------------------------*/
-let running, score, gamePattern, userPattern, win;
+let running, score, gamePattern, userPattern, winning;
 
 /*----- cached element references -----*/
 let scoreValue = document.querySelector('#score-val');
 let startButton = document.querySelector('button');
+let title = document.querySelector('h1');
 
 /*----- event listeners -----*/
 /*-----------------------------------*/
@@ -31,7 +31,7 @@ yellow.buttonLocation.addEventListener('click', playerTurn);
 blue.buttonLocation.addEventListener('click', playerTurn);
 red.buttonLocation.addEventListener('click', playerTurn);
 green.buttonLocation.addEventListener('click', playerTurn);
-startButton.addEventListener('click', startReset)
+startButton.addEventListener('click', startReset);
 
 /*----- functions -----*/
 /*-----------------------------------*/
@@ -39,7 +39,10 @@ init();
 
 //rendering
 function render(){
-  if(win){score++}
+  if(!winning){
+    title.textContent = "You Lost!";
+    title.style.color = 'red';
+  }
   scoreValue.textContent = score;
 }
 
@@ -48,18 +51,16 @@ function init (){
   gamePattern= [];
   userPattern = [];
   score = 0;
-  win = true;
-  running = false;
+  scoreValue.textContent = score;
+  winning = true;
+  title.textContent = "Play Simon";
+  title.style.color = "black";
 };
 
 //start/reset button 
 function startReset(){
-  //if game not running, turn on game and computer takes turn
-  if (!running){
-    init();
-    running = true;
-    computerTurn();
-  }
+  init();
+  computerTurn();
 }
 
 //Function for the computers turn
@@ -90,40 +91,32 @@ function getRandomColor() {
 function playerTurn(evt) {
   //Adds color clicked to user pattern
   addUserPattern(evt);
-  //if userPattern correct render score and computer takes turn
-  if (userPattern.length === gamePattern.length) {
-    checkWin(userPattern, gamePattern);
-    if (!win) {
-      console.log('lost');
-      return;
-    } else {
-      render();
-      //empties user pattern so they 
-      //have to start fresh each turn
-      userPattern = [];
-      computerTurn();
-    }
+  //if userPattern correct then render score and computer takes turn
+  checkWin(userPattern, gamePattern);
+  if (winning && (userPattern.length === gamePattern.length)) {
+    score++;
+    render();
+    userPattern = [];
+    computerTurn();
+  } else {
+    render();
   }
-
 }
-  
 //Check for win
-function checkWin(userPattern, gamePattern){
-  //compare userPattern[] to gamePattern[]
-  for(let i = 0; i < userPattern.length; i++){
-    if (userPattern[i] !== gamePattern[i]){
-      win = false;
-      running = false;
+function checkWin(userPattern, gamePattern) {
+  console.log(userPattern.map(debugColor), gamePattern.map(debugColor));
+    //compare userPattern[] to gamePattern[]
+    for (let i = 0; i < userPattern.length; i++) {
+      if (userPattern[i] !== gamePattern[i]) {winning = false;}
     }
   }
-}
 
 //Adds clicked color to userPattern
 function addUserPattern(evt){
   //exit out of click event if user has already made number of guesses in gameArray
   if(userPattern.length > gamePattern.length){return;}
   //exit out of click event if user has lost
-  if(win = false){return;}
+  if(!winning){return;}
   //finds object that triggered click event
   let clickedColor = evt.target;
   //checks to see what color the clicked button was and adds that color to userPattern
@@ -133,5 +126,7 @@ function addUserPattern(evt){
   if(clickedColor.id === 'green-button'){userPattern.push(colors[3])}
 }
 
-
+function debugColor(color) {
+  return color.colorName
+}
 
