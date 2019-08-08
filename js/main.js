@@ -39,7 +39,10 @@ init();
 
 //rendering
 function render(){
-  if(!winning){
+  if (winning) {
+    title.textContent = "Play Simon";
+    title.style.color = "black";
+  } else {
     title.textContent = "You Lost!";
     title.style.color = 'red';
   }
@@ -51,10 +54,8 @@ function init (){
   gamePattern= [];
   userPattern = [];
   score = 0;
-  scoreValue.textContent = score;
   winning = true;
-  title.textContent = "Play Simon";
-  title.style.color = "black";
+  render();
 };
 
 //start/reset button 
@@ -89,6 +90,8 @@ function getRandomColor() {
 
 //Players Turn
 function playerTurn(evt) {
+  //If game hasn't started, don't let player take turn
+  if(gamePattern.length === 0){return}
   //Adds color clicked to user pattern
   addUserPattern(evt);
   //if userPattern correct then render score and computer takes turn
@@ -97,7 +100,8 @@ function playerTurn(evt) {
     score++;
     render();
     userPattern = [];
-    computerTurn();
+    //waits a second 
+    setTimeout(computerTurn, 1000);
   } else {
     render();
   }
