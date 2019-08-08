@@ -1,5 +1,8 @@
 # Simon Game
 
+##GitHub Pages Livelink
+[Play Simon](file:///Users/Heather/Documents/GeneralAssembly/Projects/Unit1Project/index.html)
+
 ## Objectives
 * Randomly select one of 4 colors to display to the user
 * Save the color displayed to a list
@@ -18,7 +21,7 @@
  
 
 ## Wireframes
-![Simon Draft Wireframe](https://i.imgur.com/zB7Yx0J.jpg)
+[Simon Draft Wireframe](https://i.imgur.com/zB7Yx0J.jpg)
 
 ## User Stories
 * As a user(AAU), I would like the buttons to make sounds, to make it easier to remember the pattern
@@ -29,6 +32,7 @@
 
 ## Features List
 * Colors will display to user
+* Colors clicked 
 
 ## Stretch Goals
 * Optional color blind mode
@@ -42,3 +46,4 @@
 * RNG for computer to choose one of the four colors to display
 * Color button click event handler will save users input and compare to computers colors
 * Computers turn will be called at the end of users turn to alternate turns. 
+

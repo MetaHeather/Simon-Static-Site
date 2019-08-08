@@ -141,3 +141,4 @@ function getColorFromTarget(target){
   if(target.id === 'red-button'){return colors[2]}
   if(target.id === 'green-button'){return colors[3]}
 }
+
