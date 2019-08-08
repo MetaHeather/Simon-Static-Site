@@ -1,6 +1,6 @@
 # Simon Game
 
-##GitHub Pages Livelink
+## GitHub Pages Livelink
 [Play Simon](https://metaheather.github.io/Unit1Project/)
 
 ## Objectives
