@@ -71,11 +71,11 @@ function computerTurn() {
   //for each color in game pattern, light up corresponding button
   gamePattern.forEach(function (colorObject, i) {
       setTimeout(function (i) {
-        colorObject.buttonLocation.id += "-running";
+        colorObject.buttonLocation.classList.add('running');
         setTimeout(function(){
-          colorObject.buttonLocation.id = `${colorObject.colorName}-button`;
+          colorObject.buttonLocation.classList.remove('running'); 
         }, 1000);
-      }, i * 1000);
+      }, i * 1200);
   });
 }
 

@@ -25,6 +25,7 @@ button {
     min-height: 5vmin;
     font-weight: bold;
     font-size: 2vmin;
+    margin-top: 8%;
 }
 
 #console {
@@ -54,15 +55,17 @@ button {
     left: calc(50% - 20vmin);
     width: 40vmin;
     height: 40vmin;
-    font-family: 'Roboto Slab', serif;
-    font-size: 30px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 25px;
     border-radius: 50%;
     color: red;
     background-color: #2E3738;
 }
 
+
 .button {
     grid-auto-flow: row;
+    transition: background-color 300ms ease;
 }
 
 #score {
@@ -71,8 +74,9 @@ button {
 }
 
 #score-val {
-    font-size: 10vmin;
+    font-size: 8vmin;
     margin: 0;
+    margin-top: 8px;
 }
 
 
@@ -95,10 +99,6 @@ button {
 /*
 Changes color of buttons on click
 */
-#green-button:active {
-    background-color: #4DAD4C;
-}
-
 #yellow-button:active {
     background-color: #FFF200;
 }
@@ -119,25 +119,18 @@ Changes color of buttons on click
 /*
 Changes color of buttons in code while gamePattern is running
 */
-#green-button-running {
-    background-color: #4DAD4C;
-}
-
-#yellow-button-running {
+#yellow-button.running {
     background-color: #FFF200;
 }
 
-#blue-button-running {
+#blue-button.running {
     background-color: #005DFF;
 }
 
-#red-button-running {
+#red-button.running {
     background-color: #FF0000;
 }
 
-#green-button-running {
+#green-button.running {
     background-color: #06E502;
 }
-
-
-
