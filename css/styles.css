@@ -28,6 +28,10 @@ button {
     margin-top: 8%;
 }
 
+button:focus {
+    outline: none;
+}
+
 #console {
     position: relative;
     display: grid;

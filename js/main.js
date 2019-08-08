@@ -63,7 +63,7 @@ function init (){
 //start/reset button 
 function startReset(){
   init();
-  computerTurn();
+  setTimeout(computerTurn, 1000);
 }
 
 //Function for the computers turn
