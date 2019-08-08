@@ -21,6 +21,7 @@ const player = new Audio();
 /*----- app's state (variables) -----*/
 /*-----------------------------------*/
 let running, score, gamePattern, userPattern, winning;
+let highscore = 0;
 
 /*----- cached element references -----*/
 let scoreValue = document.querySelector('#score-val');
@@ -45,7 +46,7 @@ function render(){
     title.textContent = "Play Simon";
     title.style.color = "black";
   } else {
-    title.textContent = "You Lost!";
+    title.textContent =`You Lost! High Score is: ${highscore}`;
     title.style.color = 'red';
   }
   scoreValue.textContent = score;
@@ -103,6 +104,11 @@ function playerTurn(evt) {
   checkWin(userPattern, gamePattern);
   if (winning && (userPattern.length === gamePattern.length)) {
     score++;
+    //Add to high score if score is higher that current high score
+    if(score > highscore){
+      highscore++;
+    }
+    //Render new score
     render();
     userPattern = [];
     //waits a second 
