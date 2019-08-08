@@ -3,19 +3,21 @@
 
 //class to hold color name and button location
 class Color {
-  constructor(colorName, buttonLocation){
+  constructor(colorName, buttonLocation, audioLocation){
     this.colorName = colorName;
-    this.buttonLocation = buttonLocation;
+    this.buttonLocation = document.querySelector(buttonLocation);
+    this.audioLocation = audioLocation;
   }
 }
 //instantiations of each color as a Color class
-const yellow = new Color('yellow', document.querySelector('#yellow-button'));
-const blue = new Color('blue', document.querySelector('#blue-button'));
-const red = new Color('red', document.querySelector('#red-button'));
-const green = new Color('green', document.querySelector('#green-button'));
+const yellow = new Color('yellow', '#yellow-button','audio/yellow.mp3');
+const blue = new Color('blue', '#blue-button','audio/blue.mp3');
+const red = new Color('red', '#red-button','audio/red.mp3');
+const green = new Color('green', '#green-button','audio/green.mp3');
 //Array to hold color objects.
 const colors = [yellow, blue, red, green];
-
+//Create sound player
+const player = new Audio();
 /*----- app's state (variables) -----*/
 /*-----------------------------------*/
 let running, score, gamePattern, userPattern, winning;
@@ -72,6 +74,9 @@ function computerTurn() {
   gamePattern.forEach(function (colorObject, i) {
       setTimeout(function (i) {
         colorObject.buttonLocation.classList.add('running');
+        //changes player src to color sound and plays
+        player.src = colorObject.audioLocation;
+        player.play();
         setTimeout(function(){
           colorObject.buttonLocation.classList.remove('running'); 
         }, 1000);
@@ -108,7 +113,6 @@ function playerTurn(evt) {
 }
 //Check for win
 function checkWin(userPattern, gamePattern) {
-  console.log(userPattern.map(debugColor), gamePattern.map(debugColor));
     //compare userPattern[] to gamePattern[]
     for (let i = 0; i < userPattern.length; i++) {
       if (userPattern[i] !== gamePattern[i]) {winning = false;}
@@ -121,16 +125,19 @@ function addUserPattern(evt){
   if(userPattern.length > gamePattern.length){return;}
   //exit out of click event if user has lost
   if(!winning){return;}
-  //finds object that triggered click event
-  let clickedColor = evt.target;
-  //checks to see what color the clicked button was and adds that color to userPattern
-  if(clickedColor.id === 'yellow-button'){userPattern.push(colors[0])}
-  if(clickedColor.id === 'blue-button'){userPattern.push(colors[1])}
-  if(clickedColor.id === 'red-button'){userPattern.push(colors[2])}
-  if(clickedColor.id === 'green-button'){userPattern.push(colors[3])}
-}
+  //saves colorObject from event target to variable
+  let colorObject = getColorFromTarget(evt.target)
+  //changes player src to color sound and plays
+  player.src = colorObject.audioLocation;
+  player.play();
+  //adds that color to userPattern
+  userPattern.push(colorObject);
+  }
 
-function debugColor(color) {
-  return color.colorName
+//takes in event target and checks to see what id it has, and returns color object
+function getColorFromTarget(target){
+  if(target.id === 'yellow-button'){return colors[0]}
+  if(target.id === 'blue-button'){return colors[1]}
+  if(target.id === 'red-button'){return colors[2]}
+  if(target.id === 'green-button'){return colors[3]}
 }
-
