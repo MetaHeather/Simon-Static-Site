@@ -1,7 +1,7 @@
 # Simon Game
 
 ##GitHub Pages Livelink
-[Play Simon](file:///Users/Heather/Documents/GeneralAssembly/Projects/Unit1Project/index.html)
+[Play Simon](https://metaheather.github.io/Unit1Project/)
 
 ## Objectives
 * Randomly select one of 4 colors to display to the user

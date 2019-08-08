@@ -108,7 +108,7 @@ Changes color of buttons on click
 }
 
 #blue-button:active {
-    background-color: #005DFF;
+    background-color: #00ACFC;
 }
 
 #red-button:active {
@@ -128,7 +128,7 @@ Changes color of buttons in code while gamePattern is running
 }
 
 #blue-button.running {
-    background-color: #005DFF;
+    background-color: #00ACFC;
 }
 
 #red-button.running {
