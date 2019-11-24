@@ -1,7 +1,12 @@
 # Simon Game
 
+<<<<<<< Updated upstream
 ## GitHub Pages Livelink
 [Play Simon](https://metaheather.github.io/Unit1Project/)
+=======
+## Website Live link
+[Play Simon](https://simonhne.surge.sh/)
+>>>>>>> Stashed changes
 
 ## Objectives
 * Randomly select one of 4 colors to display to the user
